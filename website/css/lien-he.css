@@ -1,0 +1,724 @@
+/* ==========================================================
+   LIEN-HE.CSS — CSS độc lập cho trang Liên Hệ
+   ========================================================== */
+
+/* ========== 1. RESET & BASE ========== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px
+}
+
+body,
+#wrapper,
+#main {
+  font-family: var(--font-body) !important;
+  font-size: 1.125rem !important;
+  line-height: 1.7 !important;
+  color: var(--text) !important;
+  background: var(--pearl) !important;
+  -webkit-font-smoothing: antialiased
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color .3s
+}
+
+ul,
+ol {
+  list-style: none
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px
+}
+
+.absolute-footer {
+  display: none !important
+}
+
+/* ========== 2. TYPOGRAPHY ========== */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-heading) !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  color: var(--midnight) !important
+}
+
+h1 {
+  display: block !important;
+  font-size: clamp(2.2rem, 5vw, 3.8rem) !important;
+  letter-spacing: .02em !important
+}
+
+h2 {
+  display: block !important;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem) !important;
+  letter-spacing: .02em !important
+}
+
+h3 {
+  display: block !important;
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem) !important
+}
+
+h4 {
+  display: block !important;
+  font-size: 1.25rem !important
+}
+
+.section-label {
+  font-family: var(--font-body) !important;
+  font-size: .875rem !important;
+  letter-spacing: .25em !important;
+  text-transform: uppercase !important;
+  color: var(--gold) !important;
+  font-weight: 600 !important;
+  margin-bottom: 8px !important;
+  display: block !important
+}
+
+.section-title {
+  display: block !important;
+  text-align: center !important;
+  margin-bottom: 16px !important
+}
+
+.section-title span {
+  color: var(--gold) !important;
+  text-transform: none !important
+}
+
+.ornament {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 14px !important;
+  margin: 0 auto 32px !important
+}
+
+.ornament::before,
+.ornament::after {
+  content: '' !important;
+  height: 1px !important;
+  width: 60px !important;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent) !important
+}
+
+.ornament-diamond {
+  width: 7px !important;
+  height: 7px !important;
+  background: var(--gold) !important;
+  transform: rotate(45deg) !important;
+  flex-shrink: 0 !important
+}
+
+.section-subtitle {
+  text-align: center !important;
+  max-width: 720px !important;
+  margin: 0 auto 48px !important;
+  font-size: 1.2rem !important;
+  color: var(--text-muted) !important;
+  line-height: 1.8 !important
+}
+
+/* ========== 3. HEADER ========== */
+.header {
+  display: block !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  z-index: 1000 !important;
+  padding: 0 0 !important;
+  transition: all .4s var(--ease) !important;
+  background: transparent !important
+}
+
+.header.scrolled {
+  background: rgba(12, 24, 41, .97) !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, .2) !important
+}
+
+.header .container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  height: var(--header-h) !important
+}
+
+.header-logo img {
+  height: 48px !important;
+  transition: height .3s !important
+}
+
+.header.scrolled .header-logo img {
+  height: 40px !important
+}
+
+.nav-list {
+  display: flex !important;
+  gap: 32px !important;
+  align-items: center !important
+}
+
+.nav-link {
+  font-family: var(--font-body) !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  letter-spacing: .15em !important;
+  text-transform: uppercase !important;
+  color: var(--pearl) !important;
+  padding: 8px 0 !important;
+  position: relative !important;
+  transition: color .3s !important
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: all .4s var(--ease);
+  transform: translateX(-50%)
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--gold) !important
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  z-index: 1001
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--pearl);
+  transition: all .3s
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px)
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px)
+}
+
+/* ========== 4. HERO (Page Hero) ========== */
+.hero {
+  position: relative !important;
+  height: 100vh !important;
+  min-height: 600px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  padding-top: var(--header-h) !important
+}
+
+.hero-bg {
+  position: absolute !important;
+  inset: 0 !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important
+}
+
+.hero-bg::after {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(180deg, rgba(12, 24, 41, .5) 0%, rgba(12, 24, 41, .7) 100%) !important
+}
+
+.hero-content {
+  position: relative !important;
+  z-index: 2 !important;
+  text-align: center !important;
+  padding: 24px !important;
+  max-width: 800px !important
+}
+
+.hero-frame {
+  border: 1px solid rgba(200, 164, 92, .4) !important;
+  padding: 48px 56px !important;
+  position: relative !important
+}
+
+.hero-frame::before,
+.hero-frame::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: var(--gold);
+  border-style: solid
+}
+
+.hero-frame::before {
+  top: -1px;
+  left: -1px;
+  border-width: 2px 0 0 2px
+}
+
+.hero-frame::after {
+  bottom: -1px;
+  right: -1px;
+  border-width: 0 2px 2px 0
+}
+
+.hero h1 {
+  color: var(--pearl) !important;
+  margin-bottom: 16px !important;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, .3) !important
+}
+
+.hero p {
+  color: rgba(245, 240, 230, .85) !important;
+  font-size: 1.25rem !important;
+  margin-bottom: 24px !important
+}
+
+.hero .ornament::before,
+.hero .ornament::after {
+  background: linear-gradient(90deg, transparent, rgba(200, 164, 92, .7), transparent) !important
+}
+
+.page-hero {
+  height: 50vh !important;
+  min-height: 400px !important
+}
+
+.page-hero .hero-frame {
+  padding: 32px 40px !important
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px)
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+
+.hero-content {
+  animation: fadeInUp 1s var(--ease) .3s both
+}
+
+/* ========== 5. SECTIONS ========== */
+.section {
+  padding: var(--section-py) 0 !important;
+  display: block !important;
+  align-items: initial !important;
+  flex-flow: initial !important;
+  min-height: initial !important
+}
+
+/* ========== 6. CARDS ========== */
+.card-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 32px !important
+}
+
+.card {
+  background: var(--white) !important;
+  border-radius: 4px !important;
+  overflow: hidden !important;
+  box-shadow: var(--shadow) !important;
+  transition: all .4s var(--ease) !important;
+  border: 1px solid rgba(200, 164, 92, .15) !important
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(200, 164, 92, .4)
+}
+
+.card-body {
+  padding: 28px 24px !important
+}
+
+.card-body h4 {
+  margin-bottom: 8px !important;
+  font-size: 1.15rem !important;
+  color: var(--gold) !important
+}
+
+.card-body p {
+  color: var(--text-muted) !important;
+  font-size: 1rem !important;
+  line-height: 1.6 !important
+}
+
+/* ========== 7. CTA & FORM ========== */
+.cta-section {
+  background: linear-gradient(135deg, rgba(12, 24, 41, 0.85), rgba(22, 34, 64, 0.85)), url('http://laperlenhatrang.com/wp-content/uploads/2026/06/LaPerle-Heritage-Nha-Trang-anh-du-an-thuc-te.jpg') center/cover !important;
+  padding: var(--section-py) 0 !important;
+  position: relative !important
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c8a45c' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
+}
+
+.cta-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 48px !important;
+  align-items: center !important;
+  position: relative !important;
+  z-index: 1 !important
+}
+
+.cta-text h2 {
+  color: var(--gold) !important;
+  margin-bottom: 16px !important
+}
+
+.cta-text p {
+  color: rgba(245, 240, 230, .7) !important;
+  margin-bottom: 24px !important;
+  font-size: 1.15rem !important
+}
+
+.cta-benefits li {
+  color: var(--pearl) !important;
+  padding: 8px 0 !important;
+  padding-left: 24px !important;
+  position: relative !important;
+  font-size: 1.05rem !important
+}
+
+.cta-benefits li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: .8rem
+}
+
+.form-card {
+  background: var(--white) !important;
+  padding: 40px 32px 0px !important;
+  border-radius: 4px !important;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, .2) !important
+}
+
+.form-card h3 {
+  text-align: center !important;
+  margin-bottom: 24px !important;
+  color: var(--midnight) !important
+}
+
+.form-group {
+  margin-bottom: 16px !important
+}
+
+.form-control {
+  width: 100% !important;
+  border: 1px solid rgba(200, 164, 92, .3) !important;
+  border-radius: 2px !important;
+  font-size: 1.05rem !important;
+  background: var(--pearl) !important;
+  transition: border-color .3s !important;
+  color: var(--text) !important
+}
+
+.form-control:focus {
+  outline: none !important;
+  border-color: var(--gold) !important;
+  box-shadow: 0 0 0 3px rgba(200, 164, 92, .1) !important
+}
+
+.submit-btn {
+  width: 100% !important;
+  padding: 6px !important;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark)) !important;
+  color: var(--white) !important;
+  font-family: var(--font-body) !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  letter-spacing: .15em !important;
+  text-transform: uppercase !important;
+  border-radius: 2px !important;
+  transition: all .3s !important;
+  border: none !important;
+  cursor: pointer !important
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(200, 164, 92, .4)
+}
+
+/* ========== 8. FOOTER ========== */
+.footer {
+  background: var(--midnight) !important;
+  color: var(--pearl) !important;
+  padding: 60px 0 0 !important
+}
+
+.footer-grid {
+  display: grid !important;
+  grid-template-columns: 1.5fr 1fr 1fr 1.5fr !important;
+  gap: 40px !important;
+  padding-bottom: 40px !important;
+  border-bottom: 1px solid rgba(200, 164, 92, .15) !important
+}
+
+.footer-logo {
+  height: 80px !important;
+  margin: 0 auto 16px auto !important;
+  display: block !important
+}
+
+.footer p {
+  color: rgba(245, 240, 230, .6) !important;
+  font-size: 1rem !important;
+  line-height: 1.7 !important
+}
+
+.footer h4 {
+  font-family: var(--font-heading) !important;
+  font-size: 1.1rem !important;
+  color: var(--gold) !important;
+  margin-bottom: 16px !important
+}
+
+.footer-links li {
+  margin-bottom: 10px !important
+}
+
+.footer-links a,
+.footer-contact a {
+  color: rgba(245, 240, 230, .6) !important;
+  transition: color .3s !important;
+  font-size: 1rem !important
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+  color: var(--gold) !important
+}
+
+.footer-contact li {
+  color: rgba(245, 240, 230, .6) !important;
+  margin-bottom: 12px !important;
+  font-size: 1rem !important;
+  line-height: 1.6 !important
+}
+
+.footer-bottom {
+  text-align: center !important;
+  padding: 20px 0 !important;
+  color: rgba(245, 240, 230, .4) !important;
+  font-size: .9rem !important
+}
+
+/* ========== 9. ANIMATIONS ========== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .8s var(--ease), transform .8s var(--ease)
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0)
+}
+
+/* ========== 10. RESPONSIVE ========== */
+@media(max-width:1024px) {
+  :root {
+    --section-py: 72px
+  }
+
+  .cta-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr !important
+  }
+}
+
+@media(max-width:768px) {
+  :root {
+    --header-h: 64px
+  }
+
+  .nav-list {
+    position: fixed !important;
+    top: 0 !important;
+    right: -100% !important;
+    width: 280px !important;
+    height: 100vh !important;
+    background: var(--midnight) !important;
+    flex-direction: column !important;
+    padding: 100px 32px 40px !important;
+    gap: 0 !important;
+    transition: right .4s var(--ease) !important;
+    box-shadow: -4px 0 30px rgba(0, 0, 0, .3) !important
+  }
+
+  .nav-list.open {
+    right: 0 !important
+  }
+
+  .nav-link {
+    padding: 16px 0 !important;
+    border-bottom: 1px solid rgba(200, 164, 92, .1) !important;
+    width: 100% !important;
+    display: block !important
+  }
+
+  .menu-toggle {
+    display: flex !important
+  }
+
+  .hero {
+    height: auto !important;
+    min-height: 260px !important;
+    padding: 40px 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .hero-bg {
+    background-size: cover !important;
+    background-position: center top !important;
+  }
+
+  .hero-frame {
+    width: min(100%, 320px) !important;
+    padding: 14px 18px !important;
+    margin: 0 auto !important;
+    border-radius: 2px !important;
+    background: rgba(12, 24, 41, .06) !important;
+  }
+
+  .hero-frame .section-label,
+  .hero-frame .ornament,
+  .hero-frame p {
+    display: none !important
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr !important
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr !important
+  }
+}
+
+/* ========== 11. PAGE STANDALONE CUSTOMIZATIONS ========== */
+.lien-he-hero-bg {
+  background-image: url('http://laperlenhatrang.com/wp-content/uploads/2026/06/Sanh-thang-may-5-sao-tai-du-an-LaPerle-Heritage-Nha-Trang.jpg') !important;
+}
+
+.hero h1 span {
+  color: var(--gold) !important;
+}
+
+.lien-he-card-grid {
+  max-width: 900px !important;
+  margin: 0 auto 48px !important;
+}
+
+.lien-he-card-body {
+  text-align: center !important;
+  padding: 32px !important;
+}
+
+.contact-info-label {
+  margin-top: 12px !important;
+}
+
+.contact-info-val {
+  color: var(--gold) !important;
+  font-weight: 700 !important;
+  font-size: 1.2rem !important;
+  margin-top: 12px !important;
+}
+
+.lien-he-section-no-pb {
+  padding-bottom: 0 !important;
+}
+
+.lien-he-map-wrap {
+  margin-top: 32px !important;
+}
+
+.lien-he-iframe {
+  border: 0 !important;
+  display: block !important;
+}

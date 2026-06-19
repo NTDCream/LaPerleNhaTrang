@@ -1,0 +1,150 @@
+/* ========== DESIGN TOKENS (BASE VARIABLES) ========== */
+:root {
+  --midnight: #0c1829;
+  --navy: #162240;
+  --navy-light: #1d2d50;
+  --gold: #c8a45c;
+  --gold-light: #d4b87a;
+  --gold-dark: #a68940;
+  --ivory: #f5f0e6;
+  --cream: #ede8dd;
+  --pearl: #faf8f4;
+  --white: #ffffff;
+  --text: #2c2c2c;
+  --text-muted: #6b6b6b;
+  --text-light: #f5f0e6;
+  --font-heading: 'Noto Serif Display', serif;
+  --font-body: 'Josefin Sans', sans-serif;
+  --container: 1200px;
+  --section-py: 100px;
+  --header-h: 80px;
+  --ease: cubic-bezier(.25, .46, .45, .94);
+  --shadow: 0 4px 30px rgba(0, 0, 0, .08);
+  --shadow-hover: 0 8px 40px rgba(0, 0, 0, .15);
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.d-block {
+  display: block !important;
+}
+
+/* ========== LIGHTBOX DÙNG CHUNG ========== */
+.custom-lightbox {
+  position: fixed !important;
+  inset: 0 !important;
+  background: rgba(12, 24, 41, .95) !important;
+  z-index: 2000 !important;
+  display: none !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.custom-lightbox.active {
+  display: flex !important;
+}
+
+.custom-lightbox-close {
+  position: absolute !important;
+  top: 20px !important;
+  right: 24px !important;
+  color: var(--pearl) !important;
+  font-size: 2rem !important;
+  cursor: pointer !important;
+  transition: color .3s !important;
+  z-index: 2001 !important;
+}
+
+.custom-lightbox-close:hover {
+  color: var(--gold) !important;
+}
+
+.custom-lightbox>img {
+  max-width: 90vw !important;
+  max-height: calc(100vh - 160px) !important;
+  object-fit: contain !important;
+  border-radius: 4px !important;
+  margin-bottom: 80px !important;
+}
+
+.custom-lightbox-thumbnails {
+  position: absolute !important;
+  bottom: 24px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  display: flex !important;
+  gap: 12px !important;
+  max-width: 90vw !important;
+  overflow-x: auto !important;
+  padding: 8px !important;
+  z-index: 2001 !important;
+  background: rgba(12, 24, 41, .4) !important;
+  border-radius: 8px !important;
+  backdrop-filter: blur(5px) !important;
+}
+
+.custom-lightbox-thumb {
+  width: 70px !important;
+  height: 40px !important;
+  object-fit: cover !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  opacity: 0.5 !important;
+  transition: all 0.3s !important;
+  border: 2px solid transparent !important;
+}
+
+.custom-lightbox-thumb.active,
+.custom-lightbox-thumb:hover {
+  opacity: 1 !important;
+  border-color: var(--gold) !important;
+}
+
+.custom-lightbox-nav {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 48px !important;
+  height: 48px !important;
+  background: rgba(200, 164, 92, .2) !important;
+  color: var(--pearl) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all .3s !important;
+}
+
+.custom-lightbox-nav:hover {
+  background: var(--gold) !important;
+  color: var(--white) !important;
+}
+
+.custom-lightbox-nav.prev {
+  left: 20px !important;
+}
+
+.custom-lightbox-nav.next {
+  right: 20px !important;
+}
+
+.custom-lightbox-counter {
+  position: absolute !important;
+  top: 24px !important;
+  left: 24px !important;
+  color: var(--pearl) !important;
+  font-family: var(--font-body) !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  letter-spacing: .1em !important;
+  background: rgba(12, 24, 41, .6) !important;
+  padding: 6px 16px !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(200, 164, 92, .3) !important;
+  z-index: 2001 !important;
+}
