@@ -616,7 +616,7 @@ h4 {
 .marquee-track {
   display: inline-flex !important;
   gap: 24px !important;
-  animation: marquee 25s linear infinite !important;
+  animation: marquee 14s linear infinite !important;
 }
 
 .marquee-item {
@@ -1019,4 +1019,278 @@ h4 {
   color: var(--text-muted) !important;
   margin: 16px 0 !important;
   line-height: 1.8 !important;
+}
+
+/* ========== HOME TYPICAL FLOOR PLAN ========== */
+.home-typical-plan-section .plan-overview-img {
+  max-width: 900px !important;
+  margin: 42px auto 0 !important;
+  padding: 16px !important;
+  overflow: hidden !important;
+  border-radius: 4px !important;
+  background: var(--white) !important;
+  box-shadow: var(--shadow) !important;
+}
+
+.home-typical-plan-section .plan-overview-img img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  cursor: pointer !important;
+  transition: transform .5s var(--ease) !important;
+}
+
+.home-typical-plan-section .plan-overview-img:hover img {
+  transform: scale(1.015) !important;
+}
+
+/* ========== HOME FLOOR PLANS ========== */
+.home-plans-section .plan-tabs {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  margin-bottom: 32px !important;
+  flex-wrap: wrap !important;
+}
+
+.home-plans-section .plan-tab-btn {
+  padding: 10px 24px !important;
+  border: 1px solid rgba(200, 164, 92, .3) !important;
+  border-radius: 2px !important;
+  color: var(--text-muted) !important;
+  font-family: var(--font-body) !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  letter-spacing: .08em !important;
+  transition: all .3s var(--ease) !important;
+}
+
+.home-plans-section .plan-tab-btn.active,
+.home-plans-section .plan-tab-btn:hover {
+  border-color: var(--midnight) !important;
+  color: var(--gold) !important;
+  background: var(--midnight) !important;
+}
+
+.home-plans-section .plan-tab-content {
+  display: none !important;
+}
+
+.home-plans-section .plan-tab-content.active {
+  display: block !important;
+}
+
+.home-plans-section .floorplan-layout {
+  display: grid !important;
+  grid-template-columns: 1.2fr 1fr !important;
+  gap: 40px !important;
+  align-items: center !important;
+}
+
+.home-plans-section .floorplan-img {
+  padding: 16px !important;
+  overflow: hidden !important;
+  border-radius: 4px !important;
+  background: var(--white) !important;
+  box-shadow: var(--shadow) !important;
+}
+
+.home-plans-section .floorplan-img img {
+  display: block !important;
+  width: 100% !important;
+  max-height: 520px !important;
+  object-fit: contain !important;
+  cursor: pointer !important;
+}
+
+.home-plans-section .floorplan-info h4 {
+  margin-bottom: 8px !important;
+  color: var(--midnight) !important;
+}
+
+.home-plans-section .area-badge {
+  display: inline-block !important;
+  margin-bottom: 16px !important;
+  padding: 6px 16px !important;
+  border-radius: 2px !important;
+  color: var(--white) !important;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light)) !important;
+  font-size: .95rem !important;
+  font-weight: 600 !important;
+}
+
+.home-plans-section .floorplan-info p {
+  color: var(--text-muted) !important;
+  line-height: 1.8 !important;
+}
+
+.home-text-link {
+  display: inline-flex !important;
+  width: fit-content !important;
+  margin-top: 26px !important;
+  align-items: center !important;
+  gap: 10px !important;
+  color: var(--gold) !important;
+  font-size: .88rem !important;
+  font-weight: 700 !important;
+  letter-spacing: .1em !important;
+  text-transform: uppercase !important;
+}
+
+.home-text-link span {
+  transition: transform .3s var(--ease) !important;
+}
+
+.home-text-link:hover span {
+  transform: translateX(5px) !important;
+}
+
+/* ========== HOME NEWS ========== */
+.home-news-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 26px !important;
+  margin-top: 42px !important;
+}
+
+.home-news-card {
+  display: flex !important;
+  min-width: 0 !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(200, 164, 92, .18) !important;
+  border-radius: 4px !important;
+  background: var(--white) !important;
+  box-shadow: var(--shadow) !important;
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease) !important;
+}
+
+.home-news-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: var(--shadow-hover) !important;
+}
+
+.home-news-image {
+  display: block !important;
+  aspect-ratio: 16 / 10 !important;
+  overflow: hidden !important;
+}
+
+.home-news-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform .6s var(--ease) !important;
+}
+
+.home-news-card:hover .home-news-image img {
+  transform: scale(1.04) !important;
+}
+
+.home-news-body {
+  display: flex !important;
+  flex: 1 1 auto !important;
+  padding: 25px 24px 28px !important;
+  flex-direction: column !important;
+}
+
+.home-news-kicker {
+  margin-bottom: 10px !important;
+  color: var(--gold-dark) !important;
+  font-size: .75rem !important;
+  font-weight: 700 !important;
+  letter-spacing: .15em !important;
+  text-transform: uppercase !important;
+}
+
+.home-news-body h3 {
+  margin-bottom: 12px !important;
+  color: var(--midnight) !important;
+  font-size: 1.28rem !important;
+  line-height: 1.4 !important;
+}
+
+.home-news-body p {
+  margin: 0 !important;
+  color: var(--text-muted) !important;
+  font-size: .96rem !important;
+  line-height: 1.7 !important;
+}
+
+.home-news-body .home-text-link {
+  margin-top: auto !important;
+  padding-top: 22px !important;
+}
+
+@media (max-width: 1024px) {
+  .home-plans-section .floorplan-layout {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .home-news-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-news-grid {
+    margin-top: 30px !important;
+  }
+
+  .home-typical-plan-section .plan-overview-img {
+    margin-top: 30px !important;
+    padding: 8px !important;
+  }
+
+  .home-plans-section .plan-tabs {
+    gap: 6px !important;
+  }
+
+  .home-plans-section .plan-tab-btn {
+    flex: 1 1 calc(50% - 6px) !important;
+    padding: 10px 12px !important;
+    font-size: .88rem !important;
+  }
+
+  .home-plans-section .floorplan-img {
+    padding: 10px !important;
+  }
+
+  .home-plans-section .floorplan-info {
+    text-align: center !important;
+  }
+
+  .home-news-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Mobile homepage: show the complete artwork without HTML copy overlay. */
+@media (max-width: 768px) {
+  .hero {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 1672 / 941 !important;
+    padding: 0 !important;
+    background: #07172f !important;
+  }
+
+  .index-hero-bg {
+    background-image: url('../img/Hero BG La Perle Héritage.png') !important;
+    background-size: contain !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+  }
+
+  .hero-bg::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  .hero-content,
+  .hero-scroll {
+    display: none !important;
+  }
 }
