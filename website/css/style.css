@@ -31,6 +31,63 @@
   display: block !important;
 }
 
+/* ========== FLATSOME TRANSPARENT HEADER ========== */
+#header:not(.scrolled) .header-wrapper:not(.stuck) {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+#header:not(.scrolled) .header-wrapper:not(.stuck) .header-main,
+#header:not(.scrolled) .header-wrapper:not(.stuck) .header-top,
+#header:not(.scrolled) .header-wrapper:not(.stuck) .header-bottom,
+#header:not(.scrolled) .header-wrapper:not(.stuck) .header-bg-container,
+#header:not(.scrolled) .header-wrapper:not(.stuck) .header-bg-image,
+#header:not(.scrolled) .header-wrapper:not(.stuck) .header-bg-color {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+#header .header-wrapper,
+#header .header-main,
+#header .header-top,
+#header .header-bottom {
+  transition: background-color .35s var(--ease), box-shadow .35s var(--ease) !important;
+}
+
+#header .header-wrapper.stuck .header-main,
+#header .header-wrapper.stuck .header-top,
+#header .header-wrapper.stuck .header-bottom,
+#header .stuck .header-main,
+#header.stuck .header-main,
+#header.scrolled .header-wrapper,
+#header.scrolled .header-main,
+#header.scrolled .header-top,
+#header.scrolled .header-bottom,
+#header.scrolled .header-bg-color {
+  background: rgba(12, 24, 41, .97) !important;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, .2) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+/* Flatsome đang gắn hide-for-sticky cho Header Main; giữ menu hiện khi cuộn. */
+#header .header-wrapper.stuck .header-main.hide-for-sticky,
+#header.scrolled .header-main.hide-for-sticky {
+  display: block !important;
+}
+
+#header:not(.scrolled) .header-wrapper:not(.stuck) .nav-icon a,
+#header:not(.scrolled) .header-wrapper:not(.stuck) .icon-menu {
+  color: var(--pearl) !important;
+}
+
 /* ========== LIGHTBOX DÙNG CHUNG ========== */
 .custom-lightbox {
   position: fixed !important;
@@ -211,4 +268,73 @@
   padding: 20px 0 !important;
   color: rgba(245, 240, 230, .4) !important;
   font-size: .9rem !important
+}
+
+/* ========== 11. FOOTER RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  .footer .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 36px 32px !important
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    padding-top: 44px !important
+  }
+
+  .footer .container {
+    padding-right: 20px !important;
+    padding-left: 20px !important
+  }
+
+  .footer .footer-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 28px !important;
+    padding-bottom: 32px !important;
+    text-align: center !important
+  }
+
+  .footer .footer-logo {
+    width: auto !important;
+    max-width: min(200px, 72vw) !important;
+    height: auto !important;
+    max-height: 72px !important;
+    margin-bottom: 14px !important
+  }
+
+  .footer .footer-grid p {
+    max-width: 34rem !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    font-size: .95rem !important
+  }
+
+  .footer .footer-grid h4 {
+    margin-bottom: 10px !important
+  }
+
+  .footer .footer-links,
+  .footer .footer-contact {
+    margin: 0 !important;
+    padding: 0 !important
+  }
+
+  .footer .footer-links li,
+  .footer .footer-contact li {
+    margin-bottom: 6px !important;
+    overflow-wrap: anywhere !important
+  }
+
+  .footer .footer-links a,
+  .footer .footer-contact a {
+    display: inline-block !important;
+    padding: 4px 0 !important
+  }
+
+  .footer .footer-bottom {
+    padding: 18px 12px !important;
+    font-size: .82rem !important;
+    line-height: 1.6 !important
+  }
 }

@@ -1,8 +1,10 @@
 /* ========== HEADER SCROLL ========== */
 const header = document.querySelector('.header');
-window.addEventListener('scroll', () => {
-  header.classList.toggle('scrolled', window.scrollY > 60);
-});
+const updateHeaderState = () => {
+  if (header) header.classList.toggle('scrolled', window.scrollY > 60);
+};
+window.addEventListener('scroll', updateHeaderState, { passive: true });
+updateHeaderState();
 
 /* ========== MOBILE MENU ========== */
 const menuToggle = document.querySelector('.menu-toggle');
