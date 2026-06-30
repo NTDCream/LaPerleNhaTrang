@@ -433,15 +433,15 @@ h4 {
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important;
   gap: 24px !important;
-  margin-top: 32px !important;
+  margin-top: 32px !important
 }
 
 .amenity-item {
   overflow: hidden !important;
   border-radius: 4px !important;
-  background: var(--white) !important;
+  background: transparent !important;
   text-align: center !important;
-  box-shadow: var(--shadow) !important;
+  box-shadow: none !important
 }
 
 .amenity-item img {
@@ -452,11 +452,11 @@ h4 {
 }
 
 .amenity-caption {
-  padding: 16px !important;
+  padding: 8px 0 !important;
   font-family: var(--font-heading) !important;
   font-size: 1.1rem !important;
-  color: var(--midnight) !important;
-  font-weight: 600 !important;
+  color: var(--gold) !important;
+  font-weight: 600 !important
 }
 
 /* ========== 8. CTA & FORM ========== */

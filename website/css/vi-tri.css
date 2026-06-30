@@ -601,7 +601,8 @@ h4 {
 .golden-factors-grid {
   display: grid !important;
   grid-template-columns: repeat(4, 1fr) !important;
-  gap: 32px !important
+  gap: 32px !important;
+  align-items: stretch !important
 }
 
 /* ========== 9. CTA & FORM ========== */
@@ -945,17 +946,57 @@ h4 {
   color: var(--gold) !important;
 }
 
-.golden-factor-card {
-  background: var(--navy-light) !important;
-  border-color: rgba(200, 164, 92, .2) !important;
+.golden-factor-card,
+.section-dark .golden-factors-grid .card {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  background: #1d2d50 !important;
+  background-image: none !important;
+  border: 1px solid rgba(200, 164, 92, .2) !important;
+  border-radius: 4px !important;
+  overflow: hidden !important;
+  box-shadow: none !important;
 }
 
-.golden-factor-card h4 {
-  color: var(--gold) !important;
+.golden-factor-card .card-img,
+.section-dark .golden-factors-grid .card .card-img {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 6 / 5 !important;
+  flex: 0 0 auto !important;
+  overflow: hidden !important;
+  background: var(--midnight) !important;
 }
 
-.golden-factor-card p {
+.golden-factor-card .card-img img,
+.section-dark .golden-factors-grid .card .card-img img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+.golden-factor-card .card-body,
+.section-dark .golden-factors-grid .card .card-body {
+  display: flex !important;
+  flex: 1 1 auto !important;
+  flex-direction: column !important;
+  padding: 30px 30px 34px !important;
+  background: #1d2d50 !important;
+  background-image: none !important;
+}
+
+.golden-factor-card .card-body h4,
+.section-dark .golden-factors-grid .card .card-body h4 {
+  color: #c8a45c !important;
+  margin: 0 0 10px !important;
+}
+
+.golden-factor-card .card-body p,
+.section-dark .golden-factors-grid .card .card-body p {
   color: rgba(245, 240, 230, .7) !important;
+  margin: 0 !important;
 }
 
 .overview-grid p {

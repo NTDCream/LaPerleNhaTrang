@@ -148,3 +148,67 @@
   border: 1px solid rgba(200, 164, 92, .3) !important;
   z-index: 2001 !important;
 }
+
+/* ========== 10. FOOTER ========== */
+.footer {
+  background: var(--midnight) !important;
+  color: var(--pearl) !important;
+  padding: 60px 0 0 !important
+}
+
+.footer-grid {
+  display: grid !important;
+  grid-template-columns: 1.5fr 1fr 1fr 1.5fr !important;
+  gap: 40px !important;
+  padding-bottom: 40px !important;
+  border-bottom: 1px solid rgba(200, 164, 92, .15) !important
+}
+
+.footer-logo {
+  height: 80px !important;
+  margin: 0 auto 16px auto !important;
+  display: block !important
+}
+
+.footer p {
+  color: rgba(245, 240, 230, .6) !important;
+  font-size: 1rem !important;
+  line-height: 1.7 !important
+}
+
+.footer h4 {
+  font-family: var(--font-heading) !important;
+  font-size: 1.1rem !important;
+  color: var(--gold) !important;
+  margin-bottom: 16px !important
+}
+
+.footer-links li {
+  margin-bottom: 10px !important
+}
+
+.footer-links a,
+.footer-contact a {
+  color: rgba(245, 240, 230, .6) !important;
+  transition: color .3s !important;
+  font-size: 1rem !important
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+  color: var(--gold) !important
+}
+
+.footer-contact li {
+  color: rgba(245, 240, 230, .6) !important;
+  margin-bottom: 12px !important;
+  font-size: 1rem !important;
+  line-height: 1.6 !important
+}
+
+.footer-bottom {
+  text-align: center !important;
+  padding: 20px 0 !important;
+  color: rgba(245, 240, 230, .4) !important;
+  font-size: .9rem !important
+}
