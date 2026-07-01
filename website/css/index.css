@@ -1054,7 +1054,7 @@ h4 {
 }
 
 .home-plans-section .plan-tab-btn {
-  padding: 10px 24px !important;
+  /* padding: 10px 24px !important; */
   border: 1px solid rgba(200, 164, 92, .3) !important;
   border-radius: 2px !important;
   color: var(--text-muted) !important;

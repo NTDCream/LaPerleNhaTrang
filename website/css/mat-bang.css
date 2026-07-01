@@ -442,7 +442,7 @@ h4 {
 }
 
 .plan-tab-btn {
-  padding: 10px 24px;
+  /* padding: 10px 24px; */
   font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 600;
